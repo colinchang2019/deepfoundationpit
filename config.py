@@ -1,8 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
-@ Author  ：Chesley (chelsey@zju.edu.cn)
-@ File    : config.py
-@ Time    ：2021/5/7 20:36
+
 """
 # from model import ConvLstm
 import torch
