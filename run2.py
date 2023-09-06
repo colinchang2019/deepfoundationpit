@@ -1,8 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
-@ Author  ：Chesley (chelsey@zju.edu.cn)
-@ File    : run.py
-@ Time    ：2022/9/28 23:45
+
 """
 from __future__ import absolute_import
 from __future__ import division
