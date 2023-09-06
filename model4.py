@@ -1,8 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
-@ Author  ：Chesley (chelsey@zju.edu.cn)
-@ File    : model4.py
-@ Time    ：2023/5/3 21:56
+
 """
 import torch
 import torch.nn as nn
