@@ -253,42 +253,6 @@ if __name__ == "__main__":
     train = True
     if train:
         print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
-        main(path)  # 7879  # 8179 1106 # 9019	1948; 13727 3118 for me1; 15076, 2542 for ne9
+        main(path) 
         print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
-    else:
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        # device1 = torch.device("cpu")
-
-        pathtx1 = path + "/test_x.npz"
-        pathty1 = path + "/test_y.npz"
-        test_x = np.load(pathtx1)["sequence_array"]
-        test_y = np.load(pathty1)["sequence_array"]
-        test_x = torch.from_numpy(test_x).to(device).float()
-        test_y = torch.from_numpy(test_y).to(device).float()
-        print(test_x.dtype)
-
-        model = DFPTransformer(config).to(device)
-
-        path_m = path + "/_model.pth"
-        print(path_m)
-        model.load_state_dict(torch.load(path_m)["state_dict"])
-
-        test_x = test_x[-2:]
-        test_y = test_y[-2:]
-        y_pre = model(test_x)
-
-
-        # y_pre, test_y = otherToengLg(y_pre, log=order[data_i-1])
-        loss_fn = nn.MSELoss()  # 定义均方差作为损失函数
-        loss = loss_fn(y_pre, test_y)
-        print(y_pre.shape)
-        print("loss: ", loss)
-
-        y_pre = y_pre.cpu().detach().numpy()
-        print(np.unique(y_pre))
-        # y_pre = y_pre.cpu().detach().numpy()
-        # plt.imshow(y_pre[0][0])
-
-        test_y = test_y.cpu().detach().numpy()
-        plt.imshow(test_y[0][0])
-        plt.show()
+    
